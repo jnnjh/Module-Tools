@@ -3,6 +3,7 @@
 set -euo pipefail
 
 # TODO: Write a command to output the contents of all of the files inside the helper-files directory to the terminal.
+cat helper-files/*
 # Make sure you are only calling `cat` once.
 #
 # The output of this command should be:
