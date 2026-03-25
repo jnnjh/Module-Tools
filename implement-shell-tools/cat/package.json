@@ -1,0 +1,15 @@
+{
+  "name": "cat",
+  "version": "1.0.0",
+  "description": "You should already be familiar with the `cat` command line tool.",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "cat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "commander": "^14.0.3"
+  }
+}
