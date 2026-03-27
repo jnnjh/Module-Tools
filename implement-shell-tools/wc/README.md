@@ -14,4 +14,4 @@ It must act the same as `wc` would, if run from the directory containing this RE
 
 Matching any additional behaviours or flags are optional stretch goals.
 
-We recommend you start off supporting no flags for one file, then add support for multiple files, then add support for the flags.
+We recommend you start off supporting no flags for one file, then add support for multiple files, then add support for the flags
