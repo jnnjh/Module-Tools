@@ -1,6 +1,10 @@
 #!/bin/bash
 
 set -euo pipefail
+cd ..
+cd helper-files
+
+cat helper-1.txt helper-2.txt helper-3.txt | cat -n
 
 # NOTE: This is a stretch exercise - it is optional.
 
