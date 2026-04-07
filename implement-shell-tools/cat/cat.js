@@ -1,7 +1,27 @@
 const fs = require("fs");
-const files = process.argv.slice(2);
+const args = process.argv.slice(2);
+let numberLines = false;
+let files = [];
 
-for (let file of files) {
-  const content = fs.readFileSync(file, "utf-8");
-  console.log(content);
+for(let arg of args) {
+	if(arg === "-n") {
+		numberLines = true;
+	} else {
+		files.push(arg);
+	}
+}
+
+let lineNumber = 1;
+
+for(let file of files) {
+	const content = fs.readFileSync(file, "utf-8");
+	const lines = content.split("\n");
+
+	for(let line of lines) {
+		if(numberLines) {
+			console.log(`${lineNumber++} ${line}`);
+		} else {
+			console.log(line);
+		}
+	}
 }
