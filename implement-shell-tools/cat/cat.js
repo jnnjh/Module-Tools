@@ -1,10 +1,13 @@
 const fs = require("fs");
 const args = process.argv.slice(2);
 let numberLines = false;
+let numberNonEmpty = false;
 let files = [];
 
 for(let arg of args) {
 	if(arg === "-n") {
+		numberLines = true;
+	} else if(arg === "-b") {
 		numberLines = true;
 	} else {
 		files.push(arg);
@@ -18,7 +21,13 @@ for(let file of files) {
 	const lines = content.split("\n");
 
 	for(let line of lines) {
-		if(numberLines) {
+		if(numberNonEmpty) {
+			if(line.trim() !== "") {
+				console.log(`${lineNumber++} ${line}`);
+			} else {
+				console.log("");
+			}
+		} else if(numberLines) {
 			console.log(`${lineNumber++} ${line}`);
 		} else {
 			console.log(line);
