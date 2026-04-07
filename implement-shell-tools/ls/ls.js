@@ -1,6 +1,16 @@
 const fs = require("fs");
-const files = fs.readdirSync(".");
+const args = process.argv.slice(2);
 
-for (let file of files) {
-  console.log(file);
+let dir = ".";
+
+for(let arg of args) {
+    if(!arg.startsWith("-")) {
+        dir = arg;
+    }
+}
+
+const files = fs.readdirSync(dir);
+
+for(let file of files) {
+    console.log(file);
 }
